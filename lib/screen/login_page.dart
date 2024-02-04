@@ -57,15 +57,6 @@ class LoginPage extends StatelessWidget {
                     hintText: 'Enter secure password'),
               ),
             ),
-            TextButton( //TextButton으로 바뀌었나봄
-              onPressed: (){
-                //TODO FORGOT PASSWORD SCREEN GOES HERE
-              },
-              child: Text(
-                'Forgot Password',
-                style: TextStyle(color: Colors.blue, fontSize: 15),
-              ),
-            ),
             Container(
               height: 50,
               width: 250,
