@@ -4,6 +4,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:login_ex1/widget/auth_provider.dart';
+import 'package:flutter/gestures.dart';
+import 'package:login_ex1/screen/join.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
@@ -21,7 +23,7 @@ class LoginPage extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(top: 60.0),
-              child: Center(ㅌ
+              child: Center(
                 child: Container(
                     width: 200,
                     height: 150,
@@ -87,7 +89,18 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 130,
             ),
-            Text('New User? Create Account')
+            RichText(
+                text: TextSpan(text: '회원가입',
+                    style: TextStyle(
+                      color: Colors.grey, // 회색
+                      decoration: TextDecoration.underline, // 밑줄
+                    ),
+                    //import 'package:flutter/gestures.dart'; 위에 선언해야함
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Join()))
+                )
+            ),
           ],
         ),
       ),
